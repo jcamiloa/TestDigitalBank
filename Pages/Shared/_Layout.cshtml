@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - TestDigitalBank</title>
+
+    <!-- Bootstrap -->
+    <link href="~/Vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Font Awesome -->
+    <link href="~/Vendors/fontawesome/css/font-awesome.min.css" rel="stylesheet" />
+
+    @await RenderSectionAsync("styles", required: false)
+
+    <!-- Custom Theme Style -->
+    <link href="~/Content/Alela/css/custom.min.css" rel="stylesheet" />
+
+   
+</head>
+<body>
+    <header >
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm border-bottom box-shadow mb-3 ">
+            <div class="container">
+                <a class="navbar-brand text-dark h4" asp-area="" asp-page="/Index">Test Digital Bank</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+
+                </button>
+            </div>
+        </nav>
+
+        <div class="container py-4">
+
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item">
+                        <a href="Index">Usuarios</a>
+                    </li>
+                    @await RenderSectionAsync("breadcrumb", required: false)
+                    
+                </ol>
+            </nav>
+        </div>
+        
+
+    </header>
+    <div class="container">
+
+        <div>
+            
+        </div>
+
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+
+    <!-- Scripts -->
+    <script src="~/Vendors/jquery/jquery.min.js"></script>
+    <script src="~/Vendors/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- DateJS -->
+    <script src="~/Vendors/DateJS/build/date.js"></script>
+    <!-- bootstrap-daterangepicker -->
+    <script src="~/Vendors/moment/min/moment.min.js"></script>
+    <script src="~/Vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
+
+    @await RenderSectionAsync("scripts", required: false)
+
+    <!-- De Ultimo-->
+    <script src="~/Content/Alela/js/custom.min.js"></script>
+
+
+</body>
+</html>

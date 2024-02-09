@@ -1,0 +1,51 @@
+﻿@page
+@model TestDigitalBank.Pages.UsuarioGestionaModel
+@{
+	ViewData["Title"] = "Usuario Gestiona";
+}
+
+@section breadcrumb{
+	<li class="breadcrumb-item">
+		<a>@ViewData["breadcrumb"]</a>
+	</li>
+}
+
+<form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left x_panel" method="post">
+
+	<input type="hidden" name="TipoPro" value="@ViewData["Procedimiento"]" required="required" class="form-control ">
+	<input type="hidden" name="Id" value="@ViewData["Id"]" required="required" class="form-control ">
+
+	<div class="item form-group">
+		<label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name">
+			Nombre <span class="required">*</span>
+		</label>
+		<div class="col-md-6 col-sm-6 ">
+			<input type="text" name="UsuNom" value="@ViewData["UsuNom"]" required="required" class="form-control ">
+		</div>
+	</div>
+	<div class="item form-group">
+		<label class="col-form-label col-md-3 col-sm-3 label-align">
+			Fecha de Nacimiento <span class="required">*</span>
+		</label>
+		<div class="col-md-6 col-sm-6 ">
+			<input name="UsuFecNac" class="date-picker form-control" placeholder="dd-mm-yyyy" type="date" value="@ViewData["UsuFecNac"]" required="required">
+		</div>
+	</div>
+	<div class="item form-group">
+
+		<label class="col-form-label col-md-3 col-sm-3 label-align">
+			Sexo <span class="required">*</span>
+		</label>
+		<div class="col-md-6 col-sm-6 ">
+			@Html.DropDownList("UsuSex", null, htmlAttributes: new { @class = "form-control" })
+		</div>
+	</div>
+	<div class="ln_solid"></div>
+	<div class="item form-group">
+		<div class="col-md-6 col-sm-6 offset-md-3">
+			<a href="Index"><button class="btn btn-primary" type="button">Cancelar</button></a>
+			<button type="submit" class="btn btn-success">Confirmar</button>
+		</div>
+	</div>
+
+</form>
